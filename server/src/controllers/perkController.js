@@ -78,10 +78,11 @@ export async function updatePerk(req, res, next) {
     if(error) return res.status(400).json({ message: error.message});
 
     const updatedPerk = await Perk.findByIdAndUpdate(req.params.id, {$set: value}, {new: true});
-    res.status(201).json({perk: updatedPerk});
+    res.status(201).json({perk: updatedPerk});``
 
   } catch (err) {
     next(err);
+    
   }
 }
 
